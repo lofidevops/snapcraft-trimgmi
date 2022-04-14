@@ -43,10 +43,11 @@ The following commands should run without changing the target files:<br />
 trimgi test_search
 # example.gmi remains tidy
 # example.txt remains untidy
+# *.license remain unchanged
 
-convertgmi gmi README.gmi test_output/README.gmi  # identical
-convertgmi md README.gmi test_output/README.md  # readable
-convertgmi html README.gmi test_output/README.html  # readable
+convertgmi gmi README test_output/README.gmi  # identical
+convertgmi md README test_output/README.md  # readable
+convertgmi html README test_output/README.html  # readable
 </pre>
 <br/>
 <blockquote>FIXME: Implement and document a comprehensive round-trip test harness.</blockquote>
@@ -81,8 +82,4 @@ SPDX-License-Identifier: GPL-3.0-or-later
 <br/>
 Shared under GPL-3.0-or-later. We adhere to the Contributor Covenant 2.0 without modification, and certify origin per DCO 1.1 with a signed-off-by line (git -s). Contributions under the same terms are welcome.<br />
 <br/>
-For details see:<br />
-<br/>
-<li><a href="./GPL-3.0-or-later.txt">GPL-3.0-or-later.txt license text</a></li>
-<li><a href="./CODE_OF_CONDUCT.md">CODE_OF_CONDUCT.md (report via a private ticket)</a></li>
-<li><a href="CONTRIBUTING.DCO.txt">CONTRIBUTING.DCO.txt origin text</a></li>
+For details see the LICENSES folder, CODE_OF_CONDUCT.md (report via private ticket) and CONTRIBUTING.DCO.txt.<br />

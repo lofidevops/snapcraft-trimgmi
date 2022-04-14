@@ -16,7 +16,7 @@ def search_and_trim(base_folder: Path):
             reformat_file("GMI", file_path, file_path)
 
 
-if __name__ == "__main__":
+def main():
     base_path = Path(sys.argv[1])
 
     if os.path.isfile(base_path):
@@ -25,3 +25,7 @@ if __name__ == "__main__":
         search_and_trim(base_path)
     else:
         raise RuntimeError(f"Path {base_path} not recognised.")
+
+
+if __name__ == "__main__":
+    main()
