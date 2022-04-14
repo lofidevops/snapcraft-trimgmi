@@ -11,3 +11,4 @@ trimgmi/__pycache__/
 .venv
 *.egg-info
 *~
+Pipfile.lock
