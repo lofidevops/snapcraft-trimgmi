@@ -21,12 +21,9 @@ Also included are:
 * opinionated render to HTML
 * primitive command line tools for the above
 
-Read more about gemtext (requires Gemini client):
+Read more about gemtext:
 
 => gemini://gemini.circumlunar.space/docs/gemtext.gmi
-
-Read more about gemtext (proxy for web clients):
-
 => https://gemini.circumlunar.space/docs/gemtext.gmi
 
 ## Implementation
@@ -40,7 +37,7 @@ This implementation is deliberately verbose so that a developer can confirm by r
 The following commands should run without changing the target files:
 
 ```bash
-trimgi test_search
+trimgmi test_search
 # example.gmi remains tidy
 # example.txt remains untidy
 # *.license remain unchanged

@@ -6,8 +6,12 @@ name = "pypi"
 [packages]
 
 [dev-packages]
-reuse = "*"
-twine = "*"
+reuse = "==0.14.0"
+twine = ">=4.0, <4.1"
+
+[dev-packages.e1839a8]
+path = "."
+editable = true
 
 [requires]
 python_version = "3.8"

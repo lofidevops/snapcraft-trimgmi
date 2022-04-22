@@ -21,12 +21,9 @@ Also included are:
 * opinionated render to HTML
 * primitive command line tools for the above
 
-Read more about gemtext (requires Gemini client):
+Read more about gemtext:
 
 => gemini://gemini.circumlunar.space/docs/gemtext.gmi
-
-Read more about gemtext (proxy for web clients):
-
 => https://gemini.circumlunar.space/docs/gemtext.gmi
 
 # Implementation
@@ -40,7 +37,7 @@ This implementation is deliberately verbose so that a developer can confirm by r
 The following commands should run without changing the target files:
 
 ```bash
-trimgi test_search
+trimgmi test_search
 # example.gmi remains tidy
 # example.txt remains untidy
 # *.license remain unchanged
@@ -82,4 +79,4 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
 Shared under GPL-3.0-or-later. We adhere to the Contributor Covenant 2.0 without modification, and certify origin per DCO 1.1 with a signed-off-by line (git -s). Contributions under the same terms are welcome.
 
-For details see the LICENSES folder, CODE_OF_CONDUCT.md (report via private ticket) and CONTRIBUTING.DCO.txt.
+For details see COPYING, CODE_OF_CONDUCT.md (report via private ticket) and CONTRIBUTING.DCO.txt.

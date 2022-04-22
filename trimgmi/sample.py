@@ -1,5 +1,5 @@
 # trimgmi
-# Copyright 2022 David Seaward
+# Copyright 2022 David Seaward and contributors
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 from pathlib import Path

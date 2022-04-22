@@ -1,5 +1,5 @@
 # trimgmi
-# Copyright 2022 David Seaward
+# Copyright 2022 David Seaward and contributors
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 import os.path
@@ -17,6 +17,9 @@ def search_and_trim(base_folder: Path):
 
 
 def main():
+    if len(sys.argv) != 2:
+        raise RuntimeError("Too many/too few arguments.\nUse `trimgmi <path>`")
+
     base_path = Path(sys.argv[1])
 
     if os.path.isfile(base_path):
@@ -25,7 +28,3 @@ def main():
         search_and_trim(base_path)
     else:
         raise RuntimeError(f"Path {base_path} not recognised.")
-
-
-if __name__ == "__main__":
-    main()
