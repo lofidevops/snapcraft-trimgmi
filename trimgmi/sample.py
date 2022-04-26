@@ -1,7 +1,7 @@
 # trimgmi
 # Copyright 2022 David Seaward and contributors
 # SPDX-License-Identifier: GPL-3.0-or-later
-
+import html
 from pathlib import Path
 
 from trimgmi import Document as GmiDocument
@@ -14,13 +14,48 @@ def emit_naive_html(document: GmiDocument):
     # * HTML character encoding
     # * HTML validation
 
+    dangling_p = False
+    dangling_link_list = False
+    dangling_regular_list = False
     for line in document.emit_line_objects(auto_tidy=True):
 
-        if line.type == GmiLineType.BLANK:
+        line.text = html.escape(line.text)
+        line.extra = html.escape(line.extra)
+
+        # paragraph tags
+        if line.type == GmiLineType.REGULAR and not dangling_p:
+            dangling_p = True
+            yield "<p>"
+
+        elif line.type == GmiLineType.REGULAR and dangling_p:
             yield "<br/>"
 
-        elif line.type == GmiLineType.REGULAR:
-            yield f"{line.text}<br />"
+        elif line.type != GmiLineType.REGULAR and dangling_p:
+            dangling_p = False
+            yield "</p>"
+
+        # link list tags
+        if line.type == GmiLineType.LINK and not dangling_link_list:
+            dangling_link_list = True
+            yield "<ul>"
+
+        elif line.type != GmiLineType.LINK and dangling_link_list:
+            dangling_link_list = False
+            yield "</ul>"
+
+        # regular list tags
+        if line.type == GmiLineType.LIST_ITEM and not dangling_regular_list:
+            dangling_regular_list = True
+            yield "<ul>"
+
+        elif line.type != GmiLineType.LIST_ITEM and dangling_regular_list:
+            dangling_regular_list = False
+            yield "</ul>"
+
+        # content
+
+        if line.type == GmiLineType.REGULAR:
+            yield f"{line.text}"
 
         elif line.type == GmiLineType.LINK:
             if line.text == "":
@@ -55,8 +90,20 @@ def emit_naive_html(document: GmiDocument):
         elif line.type == GmiLineType.PREFORMAT_END:
             yield "</pre>"
 
+        elif line.type == GmiLineType.BLANK:
+            pass  # whitespace is handled by HTML blocks
+
         else:
             raise RuntimeWarning(f"Line type {line.type} not recognised.")
+
+    if dangling_p:
+        yield "</p>"
+
+    if dangling_link_list:
+        yield "</ul>"
+
+    if dangling_regular_list:
+        yield "</ul>"
 
 
 def emit_commonmark(document: GmiDocument):

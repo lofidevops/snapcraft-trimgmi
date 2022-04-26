@@ -1,41 +1,46 @@
 <h1>trimgmi</h1>
-<br/>
-Opinionated parsing of gemtext.<br />
-<br/>
-<h1>Usage</h1>
-<br/>
-See "convert", "command" and "sample" modules for examples.<br />
-<br/>
+<p>
+Opinionated parsing of gemtext.
+</p>
+<h2>Usage</h2>
+<p>
+See &quot;convert&quot;, &quot;command&quot; and &quot;sample&quot; modules for examples.
+</p>
 <blockquote>FIXME: Document this in more detail.</blockquote>
-<br/>
-<h1>Description</h1>
-<br/>
-Gemtext (GMI) is a lightweight, line-oriented markup language designed for the Gemini internet protocol. This module parses gemtext, ignoring extraneous whitespace. Text after closing ``` marks is also ignored.<br />
-<br/>
-The resulting objects can be rendered line-by-line without further parsing logic.<br />
-<br/>
-Also included are:<br />
-<br/>
+<h2>Description</h2>
+<p>
+Gemtext (GMI) is a lightweight, line-oriented markup language designed for the Gemini internet protocol. This module parses gemtext, ignoring extraneous whitespace. Text after closing ``` marks is also ignored.
+</p>
+<p>
+The resulting objects can be rendered line-by-line without further parsing logic.
+</p>
+<p>
+Also included are:
+</p>
+<ul>
 <li>round-trip render back to GMI with minimal whitespace</li>
 <li>simple render to CommonMark</li>
 <li>opinionated render to HTML</li>
 <li>primitive command line tools for the above</li>
-<br/>
-Read more about gemtext:<br />
-<br/>
+</ul>
+<p>
+Read more about gemtext:
+</p>
+<ul>
 <li><a href="gemini://gemini.circumlunar.space/docs/gemtext.gmi">gemini://gemini.circumlunar.space/docs/gemtext.gmi</a></li>
 <li><a href="https://gemini.circumlunar.space/docs/gemtext.gmi">https://gemini.circumlunar.space/docs/gemtext.gmi</a></li>
-<br/>
-<h1>Implementation</h1>
-<br/>
-This module has no external dependencies.<br />
-<br/>
-This implementation is deliberately verbose so that a developer can confirm by reading that the parser follows the gemtext specification. Optimising the core module is out-of-scope.<br />
-<br/>
-<h1>Testing</h1>
-<br/>
-The following commands should run without changing the target files:<br />
-<br/>
+</ul>
+<h2>Implementation</h2>
+<p>
+This module has no external dependencies.
+</p>
+<p>
+This implementation is deliberately verbose so that a developer can confirm by reading that the parser follows the gemtext specification. Optimising the core module is out-of-scope.
+</p>
+<h2>Testing</h2>
+<p>
+The following commands should run without changing the target files:
+</p>
 <pre class="bash">
 trimgmi test_search
 # example.gmi remains tidy
@@ -46,37 +51,34 @@ convertgmi gmi README test_output/README.gmi  # identical
 convertgmi md README test_output/README.md  # readable
 convertgmi html README test_output/README.html  # readable
 </pre>
-<br/>
 <blockquote>FIXME: Implement and document a comprehensive round-trip test harness.</blockquote>
-<br/>
-<h1>Build</h1>
-<br/>
+<h2>Build</h2>
 <pre>
 python setup.py sdist bdist_wheel
 </pre>
-<br/>
-If everything works as expected you should end up with the files:<br />
-<br/>
+<p>
+If everything works as expected you should end up with the files:
+</p>
 <pre>
-dist/trimgmi-<version>-py3-none-any.whl
-dist/trimgmi-<version>.tar.gz
+dist/trimgmi-&lt;version&gt;-py3-none-any.whl
+dist/trimgmi-&lt;version&gt;.tar.gz
 </pre>
-<br/>
-You can now optionally upload to PyPI:<br />
-<br/>
+<p>
+You can now optionally upload to PyPI:
+</p>
 <pre>
 twine upload dist/*
 </pre>
-<br/>
 <h1>Sharing and contributions</h1>
-<br/>
 <pre>
 trimgmi
 https://gitlab.com/lofidevops/trimgmi
 Copyright 2022 David Seaward and contributors
 SPDX-License-Identifier: GPL-3.0-or-later
 </pre>
-<br/>
-Shared under GPL-3.0-or-later. We adhere to the Contributor Covenant 2.0 without modification, and certify origin per DCO 1.1 with a signed-off-by line (git -s). Contributions under the same terms are welcome.<br />
-<br/>
-For details see COPYING, CODE_OF_CONDUCT.md (report via private ticket) and CONTRIBUTING.DCO.txt.<br />
+<p>
+Shared under GPL-3.0-or-later. We adhere to the Contributor Covenant 2.0 without modification, and certify origin per DCO 1.1 with a signed-off-by line (git -s). Contributions under the same terms are welcome.
+</p>
+<p>
+For details see COPYING, CODE_OF_CONDUCT.md (report via private ticket) and CONTRIBUTING.DCO.txt.
+</p>

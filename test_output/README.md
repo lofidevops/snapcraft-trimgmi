@@ -2,13 +2,13 @@
 
 Opinionated parsing of gemtext.
 
-# Usage
+## Usage
 
 See "convert", "command" and "sample" modules for examples.
 
 > FIXME: Document this in more detail.
 
-# Description
+## Description
 
 Gemtext (GMI) is a lightweight, line-oriented markup language designed for the Gemini internet protocol. This module parses gemtext, ignoring extraneous whitespace. Text after closing ``` marks is also ignored.
 
@@ -26,13 +26,13 @@ Read more about gemtext:
 * <gemini://gemini.circumlunar.space/docs/gemtext.gmi>
 * <https://gemini.circumlunar.space/docs/gemtext.gmi>
 
-# Implementation
+## Implementation
 
 This module has no external dependencies.
 
 This implementation is deliberately verbose so that a developer can confirm by reading that the parser follows the gemtext specification. Optimising the core module is out-of-scope.
 
-# Testing
+## Testing
 
 The following commands should run without changing the target files:
 
@@ -49,7 +49,7 @@ convertgmi html README test_output/README.html  # readable
 
 > FIXME: Implement and document a comprehensive round-trip test harness.
 
-# Build
+## Build
 
 ```
 python setup.py sdist bdist_wheel

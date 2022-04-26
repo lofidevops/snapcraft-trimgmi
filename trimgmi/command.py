@@ -28,3 +28,7 @@ def main():
         search_and_trim(base_path)
     else:
         raise RuntimeError(f"Path {base_path} not recognised.")
+
+
+if __name__ == "__main__":
+    main()

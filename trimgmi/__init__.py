@@ -121,11 +121,11 @@ class Line:
 
         elif line_type == LineType.HEADING2:
             clean_text = raw_text[2:].strip()
-            return Line(LineType.HEADING1, clean_text, extra="")
+            return Line(LineType.HEADING2, clean_text, extra="")
 
         elif line_type == LineType.HEADING3:
             clean_text = raw_text[3:].strip()
-            return Line(LineType.HEADING1, clean_text, extra="")
+            return Line(LineType.HEADING3, clean_text, extra="")
 
         elif line_type == LineType.LIST_ITEM:
             clean_text = raw_text[1:].strip()

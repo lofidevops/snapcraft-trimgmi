@@ -20,3 +20,7 @@ def main():
     input_path = Path(sys.argv[2])
     output_path = Path(sys.argv[3])
     reformat_file(output_format, input_path, output_path)
+
+
+if __name__ == "__main__":
+    main()
