@@ -12,3 +12,4 @@ trimgmi/__pycache__/
 *.egg-info
 *~
 Pipfile.lock
+*.snap

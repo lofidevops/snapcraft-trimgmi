@@ -1,0 +1,25 @@
+name: trimgmi
+base: core20
+version: git
+summary: Opinionated parsing of gemtext.
+description: |
+  Gemtext (GMI) is a lightweight, line-oriented markup language designed
+  for the Gemini internet protocol. The trimgmi application provides a
+  round-trip render back to GMI with minimal whitespace. The convertgmi
+  application renders to CommonMark and HTML.
+
+grade: devel
+confinement: devmode
+
+parts:
+  trimgmi:
+    plugin: python
+    source: .
+
+apps:
+  trimgmi:
+    command: bin/trimgmi
+    plugs: [home, ]
+  convertgmi:
+    command: bin/convertgmi
+    plugs: [home, ]
