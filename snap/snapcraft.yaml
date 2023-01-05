@@ -2,7 +2,7 @@
 # SPDX-FileCopyrightText: Copyright 2020 David Seaward and contributors
 
 name: trimgmi
-base: core20
+base: core22
 version: git
 summary: Opinionated parsing of gemtext.
 description: |
@@ -10,9 +10,13 @@ description: |
   for the Gemini internet protocol. The trimgmi application provides a
   round-trip render back to GMI with minimal whitespace. The convertgmi
   application renders to CommonMark and HTML.
-
+icon: static/logo.png
 grade: devel
 confinement: devmode
+
+architectures:
+  - build-on: amd64
+    build-for: all
 
 parts:
   trimgmi:
